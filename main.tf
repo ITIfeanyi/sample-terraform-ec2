@@ -8,11 +8,11 @@ terraform {
 }
 # Configure the AWS Provider
 provider "aws" {
-  region = "eu-west-2"
+  region = var.region
 }
 
 # Create a VPC
 resource "aws_instance" "myec2" {
-  ami = "ami-0b53285ea6c7a08a7"
-  instance_type = "t2.micro"
+  ami = var.ami
+  instance_type = var.instance_type
 }
